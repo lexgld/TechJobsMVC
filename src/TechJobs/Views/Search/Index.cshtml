@@ -34,3 +34,19 @@
 
     // TODO #2 - Loop over jobs dictionary and display all job fields 
 }
+
+<table class="job-listing">
+    @if (ViewBag.jobs != null)
+    {
+        foreach (Dictionary<string,string> job in ViewBag.jobs)
+        {
+            foreach (KeyValuePair<string,string> result in job)
+            {
+                <tr>
+                    <td> @result.Key.ToUpper()</td>
+                    <td> @result.Value</td>
+                </tr>
+            }
+        }
+    }
+</table>
